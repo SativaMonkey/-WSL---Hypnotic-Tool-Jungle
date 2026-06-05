@@ -1,24 +1,24 @@
 # TUNE.html | Hypnotic Tool Jungle
 **v1.0.0 | ONEOFAPES**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://<ТВІЙ-ПРОЄКТ>.vercel.app)
+[![Deploy with Vercel](https://vercel.com/button)](https://wsl-hypnotic-tool-jungle.vercel.app/)
 [![Web Audio API](https://img.shields.io/badge/Audio-Web_Audio_API-black?style=flat-square)]()
 [![HTML5 Canvas](https://img.shields.io/badge/Graphics-Canvas_3D-black?style=flat-square)]()
 
 <div align="center">
-  <a href="https://<ТВІЙ-ПРОЄКТ>.vercel.app">
-    <img src="ui-preview.gif" alt="Hypnotic Tool Jungle - Console UI" width="800"/>
+  <a href="https://wsl-hypnotic-tool-jungle.vercel.app/">
+    <img src="readme_/Recording%202026-06-05%20130321.gif" alt="Hypnotic Tool Jungle - Console UI" width="800"/>
   </a>
   <br><br>
-  <a href="https://<ТВІЙ-ПРОЄКТ>.vercel.app">
-    <img src="visualizer-preview.gif" alt="Hypnotic Tool Jungle - 3D Visualizer" width="800"/>
+  <a href="https://wsl-hypnotic-tool-jungle.vercel.app/">
+    <img src="readme_/Recording%202026-06-05%20130546.gif" alt="Hypnotic Tool Jungle - 3D Visualizer" width="800"/>
   </a>
   <br><br>
   <p><i>Click the interface to launch the live generative environment.</i></p>
 </div>
 
 ## System Overview
-Результат нічного спринту. Чистий vibecode. Повністю автономне генеративне аудіо-візуальне середовище, запаковане в один файл `TUNE.html`. Жодних зовнішніх залежностей, фреймворків чи медіа-ассетів. Вся генерація звуку та 3D-графіки відбувається локально на стороні клієнта. Повна оффлайн-функціональність.
+Результат нічного спринту. Чистий vibecode. Повністю автономне генеративне аuidо-візуальне середовище, запаковане в один файл `TUNE.html`. Жодних зовнішніх залежностей, фреймворків чи медіа-ассетів. Вся генерація звуку та 3D-графіки відбувається локально на стороні клієнта. Повна оффлайн-функціональність.
 
 * **Target Vibe:** Deep House / Dystopian Ambient.
 * **Architecture:** Zero-dependency (Vanilla JS + Web Audio API + HTML5 Canvas).
