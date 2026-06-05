@@ -211,27 +211,42 @@
             }
         }
 
+        @media(max-width: 899px) {
+            body {
+                height: auto;
+                min-height: 100vh;
+                overflow-y: auto;
+                justify-content: flex-start;
+                padding: 10px;
+            }
+            .container {
+                height: auto;
+            }
+            #ui {
+                height: auto;
+                gap: 15px;
+            }
+            .panel {
+                height: auto !important;
+            }
+        }
+
         @media(min-width: 750px) and (max-width: 899px) {
             #ui { 
                 grid-template-columns: 1fr 1fr; 
-                grid-template-rows: auto auto auto;
             }
             #panel-sequencer {
                 grid-column: 1;
-                grid-row: 1;
             }
             #panel-pads {
                 grid-column: 2;
-                grid-row: 1;
             }
             #panel-settings {
                 grid-column: 1 / span 2;
-                grid-row: 2;
             }
             #panel-dashboard {
                 grid-column: 1 / span 2;
-                grid-row: 3;
-                height: 380px;
+                height: 380px !important;
             }
         }
         
@@ -239,11 +254,18 @@
             #ui {
                 grid-template-columns: 1fr;
             }
-            .panel {
-                height: auto !important;
-            }
             #panel-dashboard {
-                height: 300px;
+                order: 1;
+                height: 300px !important;
+            }
+            #panel-sequencer {
+                order: 2;
+            }
+            #panel-pads {
+                order: 3;
+            }
+            #panel-settings {
+                order: 4;
             }
         }
         
@@ -651,6 +673,7 @@
                 <div style="margin-top: 5px; font-family: monospace; font-size: 10px;">
                     <div style="font-size: 9px; color: #404040; margin-bottom: 6px; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">Presets</div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                        <button class="sound-btn" style="grid-column: span 2; border-color: var(--main-color); color: var(--main-color); font-weight: bold;" onclick="loadPreset('DEFAULT')">[ RESET TO DEFAULT JUNGLE ]</button>
                         <button class="sound-btn" onclick="loadPreset('MEDITATION')">MEDITATION</button>
                         <button class="sound-btn" onclick="loadPreset('WOBBLE')">WOBBLE_WARFARE</button>
                         <button class="sound-btn" onclick="loadPreset('RAVE')">90S_RAVE</button>
@@ -3244,6 +3267,7 @@
         }
 
         const PRESETS = {
+            DEFAULT:    { reverb: 35, wobble: 20,  echo: 55, glide: 80,  subvol: 100, bpm: 120, hue: 0,   sat: 100 },
             MEDITATION: { reverb: 85, wobble: 8,   echo: 75, glide: 140, subvol: 50,  bpm: 90,  hue: 200, sat: 80 },
             WOBBLE:     { reverb: 25, wobble: 65,  echo: 30, glide: 40,  subvol: 130, bpm: 140, hue: 90,  sat: 100 },
             RAVE:       { reverb: 45, wobble: 22,  echo: 60, glide: 30,  subvol: 90,  bpm: 160, hue: 0,   sat: 100 },
@@ -3269,7 +3293,13 @@
             };
             
             // Adjust visualizer settings, modes, and synth types directly based on preset style
-            if (presetName === 'MEDITATION') {
+            if (presetName === 'DEFAULT') {
+                visBright = 1.0; visThick = 1.0; visSize = 1.0;
+                currentSynthType = 'triangle';
+                currentDecayMult = 1.5;
+                visMode = 0; // MORPH_SEQUENCE
+                setGrooveStyle('BREAKBEAT');
+            } else if (presetName === 'MEDITATION') {
                 visBright = 1.2; visThick = 1.0; visSize = 1.5;
                 currentSynthType = 'triangle';
                 currentDecayMult = 1.8;
